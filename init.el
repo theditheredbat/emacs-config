@@ -27,6 +27,15 @@
 ;; No funny bell noise(most of the time)
 (setq ring-bell-function 'ignore)
 
+;; Package setup
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; TABS are now SPACES buahahahahhaha
 (setq-default indent-tabs-mode nil)
 
@@ -34,6 +43,12 @@
 (setq-default c-basic-offset 4)
 (global-set-key (kbd "C-c b") 'compile)
 (global-set-key (kbd "C-c r") 'recompile)
+
+;; nasm-mode
+(use-package nasm-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.asm\\'" . nasm-mode))
+  (setq nasm-basic-offset 4))
 
 ;; org-mode
 (add-hook 'org-mode-hook 'org-indent-mode)
