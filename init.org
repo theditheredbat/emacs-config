@@ -22,7 +22,7 @@
 #+end_src
 
 * No Weird File Shenanigans
-** BackFiles & Friends
+** Backup Files & Friends
 #+begin_src emacs_lisp
 (auto-save-mode -1)
 (setq make-backup-files nil
