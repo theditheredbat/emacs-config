@@ -57,8 +57,7 @@
 
 ;; nasm-mode
 (use-package nasm-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.asm\\'" . nasm-mode)))
+  :mode "\\.asm\\'")
 
 ;; org-mode
 (use-package org
@@ -69,6 +68,14 @@
    '(org-level-2 ((t (:inherit outline-2 :height 1.1))))))
 
 ;; Git Integration
-(use-package magit)
+(use-package magit
+  :defer t)
+
+;; Completion Framework
+(use-package vertico
+  :init
+  (vertico-mode 1)
+  :config
+  (setq vertico-count 5))
 
 ;; Maybe Add Projectile or something
