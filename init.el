@@ -71,7 +71,7 @@
   :mode "\\.asm\\'")
 
 ;; Look into Afterwriting
-;; Use .fountain for file extension
+;; Use .fountain for files
 (use-package fountain-mode)
 
 (use-package vertico
